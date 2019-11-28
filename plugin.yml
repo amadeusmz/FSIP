@@ -1,0 +1,9 @@
+name: FSIP
+version: 1.0
+author: GunFS
+main: net.gunfs.IPManager.IPManager
+softdepend: [LoginSecurity]
+commands:
+ fsip:
+  permission: fsip.admin
+  aliases: [ip]
