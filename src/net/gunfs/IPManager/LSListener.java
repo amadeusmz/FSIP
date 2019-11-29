@@ -8,10 +8,10 @@ import org.bukkit.event.Listener;
 import com.lenis0012.bukkit.ls.LoginEvent;
 import com.lenis0012.bukkit.ls.RegisterEvent;
 
-public class EventListener implements Listener {
+public class LSListener implements Listener {
 	private IPManager main;
 
-	public EventListener(IPManager plugin) {
+	public LSListener(IPManager plugin) {
 		main = plugin;
 	}
 

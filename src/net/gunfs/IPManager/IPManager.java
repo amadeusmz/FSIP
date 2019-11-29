@@ -5,6 +5,7 @@ import java.util.logging.Level;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IPManager extends JavaPlugin {
@@ -27,9 +28,11 @@ public class IPManager extends JavaPlugin {
 			init();
 		} catch (Exception ignored) {
 		}
-		if (getServer().getPluginManager().getPlugin("LoginSecurity") != null) {
-			getServer().getPluginManager().registerEvents(new EventListener(this), this);
-		}
+		PluginManager pm = getServer().getPluginManager();
+		if (pm.getPlugin("LoginSecurity") != null)
+			pm.registerEvents(new LSListener(this), this);
+		else if (Config.LOBBY)
+			pm.registerEvents(new LoginListener(), this);
 	}
 
 	private void init() throws Exception {

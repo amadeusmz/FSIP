@@ -9,6 +9,7 @@ public class Config {
 	public static String MYSQL_USER;
 	public static String MYSQL_PASS;
 	public static String MYSQL_DATABASE;
+	public static boolean LOBBY = false;
 
 	public static void load() {
 		IPManager ins = IPManager.getInstance();
@@ -19,5 +20,6 @@ public class Config {
 		MYSQL_USER = config.getString("mysql.user");
 		MYSQL_PASS = config.getString("mysql.pass");
 		MYSQL_DATABASE = config.getString("mysql.database");
+		LOBBY = config.getBoolean("lobby");
 	}
 }

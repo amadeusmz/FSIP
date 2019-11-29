@@ -4,3 +4,5 @@ mysql:
  user: root
  pass: yeungan
  database: minefs
+#Sửa thành true nếu plugin này cài ở lobby hoặc chỉ chạy một server duy nhất không dùng Bungeecord, khi đó plugin sẽ log IP của player
+log: false
